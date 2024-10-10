@@ -1,13 +1,17 @@
 {
   "name": "xml-to-json-webstream",
-  "version": "0.0.0",
-  "description": "A simple filterable xml streaming parser for WHATWG web streams",
+  "version": "0.0.1",
+  "description": "A simple filterable xml to json streaming parser for WHATWG web streams",
   "main": "dist/index.js",
   "type": "module",
   "types": "dist/index.d.ts",
+  "homepage": "https://johnsonjo4531.github.io/xml-to-json-webstream/",
+  "bugs": "https://github.com/johnsonjo4531/xml-to-json-webstream/issues",
+  "repository": "github:johnsonjo4531/xml-to-json-webstream",
   "scripts": {
     "test": "deno test ./src/tests/*.ts --allow-read",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "rss",
