@@ -1,7 +1,0 @@
-mkdir -p ./assets/temp
-inkscape -w 16 -h 16 -o ./assets/temp/16.png ./assets/logo.svg
-inkscape -w 32 -h 32 -o ./assets/temp/32.png ./assets/logo.svg
-inkscape -w 48 -h 48 -o ./assets/temp/48.png ./assets/logo.svg
-magick ./assets/temp/16.png ./assets/temp/32.png ./assets/temp/48.png ./xml-to-json-webstream-docs/static/img/favicon.ico
-cp ./assets/logo.svg ./xml-to-json-webstream-docs/static/img/logo.svg
-

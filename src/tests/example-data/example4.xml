@@ -1,5 +1,0 @@
-<!ELEMENT lines (line*)>
-<!ELEMENT line O - (#PCDATA)>
-<!ENTITY   line-tagc  "</line>">
-<!SHORTREF one-line "&#RE;&#RS;" line-tagc>
-<!USEMAP   one-line line>

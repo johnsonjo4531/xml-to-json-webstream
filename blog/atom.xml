@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://johnsonjo4531.github.io/xml-to-json-webstream/blog</id>
+    <title>XML to JSON Webstream Blog</title>
+    <updated>2024-10-09T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://johnsonjo4531.github.io/xml-to-json-webstream/blog"/>
+    <subtitle>XML to JSON Webstream Blog</subtitle>
+    <icon>https://johnsonjo4531.github.io/xml-to-json-webstream/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Initial Release]]></title>
+        <id>https://johnsonjo4531.github.io/xml-to-json-webstream/blog/initial-release</id>
+        <link href="https://johnsonjo4531.github.io/xml-to-json-webstream/blog/initial-release"/>
+        <updated>2024-10-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Check out the initial release of the docs and project!]]></summary>
+        <content type="html"><![CDATA[<p>Check out the initial release of the docs and project!</p>
+<p>I wanted to make a xml to json library I would enjoy using hope you enjoy v0.0.0 of this library too.</p>]]></content>
+        <author>
+            <name>John Johnson</name>
+            <uri>https://github.com/johnsonjo4531</uri>
+        </author>
+    </entry>
+</feed>

@@ -1,1 +1,0 @@
-curl https://www.theverge.com/rss/index.xml -o ./src/tests/example-data/example1.xml
