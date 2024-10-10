@@ -1,0 +1,10 @@
+xml-tojson-webstream-docs/
+src/
+tsconfig.json
+import_map.json
+generate-favicon
+deno.lock
+.vscode/
+fetch-example*
+Makefile
+
