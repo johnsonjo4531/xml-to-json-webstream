@@ -8,3 +8,4 @@ deno.lock
 fetch-example*
 Makefile
 assets/temp/
+assets/
