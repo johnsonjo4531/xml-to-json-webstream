@@ -10,7 +10,7 @@ Indication that something bad happened. The error will be hanging out on parser.
 
 #### Defined in
 
-[index.ts:5](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L5)
+[index.ts:5](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/4a6d5ede6d5de55bf286a795f124a9d92e4f5239/src/index.ts#L5)
 
 ***
 
@@ -22,4 +22,4 @@ instance of Error.
 
 #### Defined in
 
-[index.ts:7](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L7)
+[index.ts:7](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/4a6d5ede6d5de55bf286a795f124a9d92e4f5239/src/index.ts#L7)

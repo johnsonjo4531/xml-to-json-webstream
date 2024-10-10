@@ -10,7 +10,7 @@ Random SGML declarations. Stuff like `<!ENTITY p>` would trigger this kind of ev
 
 #### Defined in
 
-[index.ts:31](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L31)
+[index.ts:31](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/4a6d5ede6d5de55bf286a795f124a9d92e4f5239/src/index.ts#L31)
 
 ***
 
@@ -20,4 +20,4 @@ Random SGML declarations. Stuff like `<!ENTITY p>` would trigger this kind of ev
 
 #### Defined in
 
-[index.ts:32](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L32)
+[index.ts:32](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/4a6d5ede6d5de55bf286a795f124a9d92e4f5239/src/index.ts#L32)
