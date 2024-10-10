@@ -7,4 +7,4 @@ deno.lock
 .vscode/
 fetch-example*
 Makefile
-temp/
+assets/temp/
