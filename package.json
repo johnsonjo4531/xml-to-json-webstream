@@ -1,6 +1,6 @@
 {
   "name": "xml-to-json-webstream",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple filterable xml to json streaming parser for WHATWG web streams",
   "main": "dist/index.js",
   "type": "module",
