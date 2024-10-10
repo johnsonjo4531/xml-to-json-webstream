@@ -1,0 +1,1 @@
+wget --header="Content-Type: application/xml" https://feeds.blubrry.com/feeds/liberty_roundtable_live.xml -O ./src/tests/example-data/example0.xml 
