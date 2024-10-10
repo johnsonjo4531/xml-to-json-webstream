@@ -10,7 +10,7 @@ A closing tag. In loose mode, tags are auto-closed if their parent closes. In st
 
 #### Defined in
 
-index.ts:59
+[index.ts:59](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L59)
 
 ***
 
@@ -22,4 +22,4 @@ tag name
 
 #### Defined in
 
-index.ts:61
+[index.ts:61](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L61)

@@ -10,7 +10,7 @@ The opening tag of a `<![CDATA[` block.
 
 #### Defined in
 
-index.ts:80
+[index.ts:80](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L80)
 
 ***
 
@@ -20,4 +20,4 @@ index.ts:80
 
 #### Defined in
 
-index.ts:81
+[index.ts:81](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L81)

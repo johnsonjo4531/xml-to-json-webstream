@@ -10,7 +10,7 @@ Stuff like `<?xml foo="blerg" ?>`.
 
 #### Defined in
 
-index.ts:24
+[index.ts:24](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L24)
 
 ***
 
@@ -30,4 +30,4 @@ object with name and body members. Attributes are not parsed, as processing inst
 
 #### Defined in
 
-index.ts:26
+[index.ts:26](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L26)

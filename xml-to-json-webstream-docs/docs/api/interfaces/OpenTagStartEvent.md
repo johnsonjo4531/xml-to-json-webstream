@@ -10,7 +10,7 @@ Emitted immediately when the tag name is available, but before any attributes ar
 
 #### Defined in
 
-index.ts:37
+[index.ts:37](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L37)
 
 ***
 
@@ -34,4 +34,4 @@ object with a name field and an empty attributes set. Note that this is the same
 
 #### Defined in
 
-index.ts:39
+[index.ts:39](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L39)

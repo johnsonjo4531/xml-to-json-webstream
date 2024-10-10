@@ -10,7 +10,7 @@ If the xmlns option is set, then this event will signal the end of a namespace b
 
 #### Defined in
 
-index.ts:105
+[index.ts:105](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L105)
 
 ***
 
@@ -28,4 +28,4 @@ index.ts:105
 
 #### Defined in
 
-index.ts:106
+[index.ts:106](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L106)

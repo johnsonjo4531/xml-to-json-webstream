@@ -10,7 +10,7 @@ An attribute node.
 
 #### Defined in
 
-index.ts:66
+[index.ts:66](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L66)
 
 ***
 
@@ -30,4 +30,4 @@ object with name and value. In non-strict mode, attribute names are in upper-cas
 
 #### Defined in
 
-index.ts:68
+[index.ts:68](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L68)

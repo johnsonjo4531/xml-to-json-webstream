@@ -10,7 +10,7 @@ An opening tag
 
 #### Defined in
 
-index.ts:48
+[index.ts:48](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L48)
 
 ***
 
@@ -34,4 +34,4 @@ object with name and attributes. In non-strict mode, tag names are uppercased, u
 
 #### Defined in
 
-index.ts:50
+[index.ts:50](https://github.com/johnsonjo4531/xml-to-json-webstream/blob/fd588757886c9248e940517cc56136cf677a6ed7/src/index.ts#L50)

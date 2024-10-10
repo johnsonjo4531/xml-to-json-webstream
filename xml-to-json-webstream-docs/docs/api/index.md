@@ -1,5 +1,9 @@
 # xml-to-json-webstream
 
+<p align="center">
+    <img width="280" src="https://raw.githubusercontent.com/johnsonjo4531/xml-to-json-webstream/refs/heads/main/assets/logo.svg"/>
+</p>
+
 A modern frontend and xml parser library that uses browser's webstreams and the browser compatible sax-ts under the hood, and adds better typings to it and uses an alternative async iteration API instead of an event API.
 
 ## Installation
@@ -146,26 +150,6 @@ for await (const item of getChannelImage(stream)) {
 
 The most verbose of all options and probably not what you want, but get's any and all combinations of parts and pieces of json possible using breadth first search.
 Basically walks the whole XML tree and emits JSON as it goes.
-
-```ts
-import { streamXMLToJSON } from "../../index.ts";
-import { getExampleData } from "../utils.ts";
-
-async function getRSSTitle(stream: ReadableStream<Uint8Array | string>) {
-    for await (
-        const item of streamXMLToJSON(stream, {
-            emit: "updating-root",
-        })
-    ) {
-        if (item?.rss?.channel?.title) {
-            return item?.rss?.channel?.title;
-        }
-    }
-    return "";
-}
-const stream = await getExampleData(0);
-console.log(await getTitle(stream));
-```
 
 ## streamingSAX
 
