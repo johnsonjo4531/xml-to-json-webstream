@@ -1,4 +1,4 @@
-xml-tojson-webstream-docs/
+xml-to-json-webstream-docs/
 src/
 tsconfig.json
 import_map.json
@@ -7,4 +7,4 @@ deno.lock
 .vscode/
 fetch-example*
 Makefile
-
+temp/
