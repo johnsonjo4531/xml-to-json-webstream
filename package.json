@@ -1,6 +1,6 @@
 {
   "name": "xml-to-json-webstream",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "A simple filterable xml to json streaming parser for WHATWG web streams",
   "main": "dist/index.js",
   "type": "module",
@@ -23,14 +23,17 @@
     "xml-parser",
     "stream",
     "webstream",
-    "web"
+    "web",
+    "sax",
+    "sax-alternative"
   ],
   "author": "johnsonjo4531",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^5.6.2"
+    "@types/sax": "^1.2.7",
+    "typescript": "^5.6.3"
   },
   "dependencies": {
-    "sax-ts": "^1.2.13"
+    "sax": "^1.4.1"
   }
 }

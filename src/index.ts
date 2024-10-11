@@ -1,4 +1,25 @@
-import { SAXParser } from "sax-ts";
+import * as SAX from "sax";
+const SAXParser = (SAX as unknown as {default: typeof SAX}).default;
+
+
+async function* streamAsyncIterator(stream: ReadableStream) {
+  // Get a lock on the stream
+  const reader = stream.getReader();
+
+  console.log({ reader });
+  try {
+    while (true) {
+      // Read from the stream
+      const { done, value } = await reader.read();
+      // Exit if we're done
+      if (done) return;
+      // Else yield the chunk
+      yield value;
+    }
+  } finally {
+    reader.releaseLock();
+  }
+}
 
 /** Indication that something bad happened. The error will be hanging out on parser.error, and must be deleted before parsing can continue. By listening to this event, you can keep an eye on that kind of stuff. Note: this happens much more in strict mode. */
 export interface ErrorEvent {
@@ -107,8 +128,8 @@ export interface CloseNamepsaceEvent {
 }
 
 /** In non-strict mode, `<script>` tags trigger a "script" event, and their contents are not checked for special xml characters. If you pass noscript: true, then this behavior is suppressed. */
-export interface NoScriptEvent {
-  event: "noscript";
+export interface ScriptEvent {
+  event: "script";
   payload: unknown;
 }
 
@@ -128,7 +149,7 @@ export type Events =
   | CloseCDataEvent
   | OpenNamespaceEvent
   | CloseNamepsaceEvent
-  | NoScriptEvent;
+  | ScriptEvent;
 
 export type Event<Event extends Events["event"]> = Events & {
   event: Event;
@@ -181,7 +202,7 @@ export function streamingSAX<EventsToListen extends Events["event"][]>({
     strictEntities?: boolean;
   };
 }) {
-  let parser: null | SAXParser = null;
+  let parser: null | ReturnType<(typeof SAXParser)["parser"]> = null;
   const textDecoder = new TextDecoder();
   const transform = new TransformStream<
     StreamTypeFromBytesType<BytesType>,
@@ -189,7 +210,7 @@ export function streamingSAX<EventsToListen extends Events["event"][]>({
   >({
     start(controller) {
       const { strict, ...opts } = saxOptions;
-      parser = new SAXParser(strict ?? false, opts);
+      parser = SAXParser.parser(strict ?? false, opts);
 
       const ERROR_EVENT = "error" as const;
       if (continueOnError && events.includes(ERROR_EVENT)) {
@@ -209,12 +230,12 @@ export function streamingSAX<EventsToListen extends Events["event"][]>({
       }
 
       for (const event of events) {
-        parser[`on${event}`] = (payload: EventPayload<typeof event>) => {
-          const queueableEvent = {
+        parser[`on${event}`] = (...args: [EventPayload<typeof event>?, ...any[]]) => {
+          const payload = args[0];
+          controller.enqueue((payload ? {
             event,
             payload,
-          } as Event<typeof event>;
-          controller.enqueue(queueableEvent);
+          } : {event})as Event<typeof event>);
         };
       }
 
@@ -527,14 +548,17 @@ export async function* streamXMLToJSON<
   } = {},
 ): AsyncGenerator<T> {
   const { emit = "updating-root" } = opts;
+  const validEmits = [
+    "leafs",
+    "updating-root",
+    "leafs-named",
+    "updating-named",
+  ] as const satisfies NonNullable<(typeof opts)["emit"]>[];
   console.assert(
-    ([
-      "leafs",
-      "updating-root",
-      "leafs-named",
-      "updating-named",
-    ] as const satisfies NonNullable<(typeof opts)["emit"]>[]).includes(emit),
-    "You provided an incorrect emit method please choose either 'leafs', 'root', or 'named'.",
+    validEmits.includes(emit),
+    `You provided an incorrect emit method please choose either ${
+      validEmits.slice(0, -1).join(",")
+    }, or ${validEmits.slice(-1).join("")}.`,
   );
   const stack: XMLElement[] = [];
   let getAncestors = false;
@@ -549,7 +573,7 @@ export async function* streamXMLToJSON<
   const name_set = new Set(names);
 
   for await (
-    const item of stream.pipeThrough(
+    const item of streamAsyncIterator(stream.pipeThrough(
       streamingSAX({
         saxOptions: {
           lowercase: true,
@@ -557,7 +581,7 @@ export async function* streamXMLToJSON<
         },
         events: ["opentag", "text", "cdata", "error", "closetag"],
       }),
-    )
+    ))
   ) {
     if (item.event === "error") {
       throw item.payload;
@@ -614,7 +638,9 @@ export async function* streamXMLToJSON<
           ) {
             yield xmlStateToJSON(state) as T;
           } else if (emit === "updating-root") {
-            yield xmlStateToJSON(stack[0]) as T;
+            if (stack[0]) {
+              yield xmlStateToJSON(stack[0]) as T;
+            }
           }
           if (opts.emit === "updating-named") {
             // lookup all parents with names and emit them.

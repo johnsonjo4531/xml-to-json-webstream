@@ -1,0 +1,1 @@
+curl https://feeds.feedburner.com/POVRTS -o ./src/tests/example-data/example12.xml
